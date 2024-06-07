@@ -635,9 +635,11 @@ section {
   background-color: #ffb727;
 }
 
-/*--------------------------------------------------------------
-# My Resume
---------------------------------------------------------------*/
+.introduction {
+  background-color: #ffb727;
+  
+}
+
 .introduction .introduction-title {
   font-size: 26px;
   font-weight: 700;
@@ -695,9 +697,6 @@ section {
   border: 2px solid #82909c;
 }
 
-/*--------------------------------------------------------------
-# My Services
---------------------------------------------------------------*/
 .services .icon-box {
   padding: 30px;
   position: relative;
@@ -751,9 +750,6 @@ section {
   color: #ffb727;
 }
 
-/*--------------------------------------------------------------
-# Contact Me
---------------------------------------------------------------*/
 .contact .info-box {
   color: #444444;
   text-align: center;
@@ -902,6 +898,50 @@ section {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.cardsbox {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card{
+  position: relative;
+  width: 400px;
+  height: 100px;
+  margin: 15px;
+  transition: all 0.5s ease;
+  background-color: #ffb727; 
+}
+.cardTitle{
+  opacity: 1;
+  color: white;
+  transition: all 0.15s ease;
+}
+.cardThumb{
+  opacity: 0;
+  padding: 1px;
+}
+
+.card:hover,
+.card:hover .cardThumb,
+.card:hover .cardTitle{
+  width: 500px;
+  height: 200px;
+  color: black;
+}
+
+.card:hover{
+  background-color: white;  
+}
+
+.card:hover .cardThumb{
+  opacity: 1;
 }
 
 /*--------------------------------------------------------------
