@@ -1,11 +1,10 @@
 <?php
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'szabolcs.szelenyi23@gmail.com';
+  $receiving_email_address = 'maria.bordas@t-online.hu';
 
   if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
     include( $php_email_form );
   } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+    die( 'Valami hiba történt! Próbáld később!');
   }
 
   $contact = new PHP_Email_Form;
@@ -16,7 +15,7 @@
   $contact->from_email = $_POST['email'];
   $contact->subject = $_POST['subject'];
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
+  // SMTP kódrészlet
   /*
   $contact->smtp = array(
     'host' => 'example.com',
