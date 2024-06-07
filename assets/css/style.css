@@ -894,6 +894,7 @@ section {
   margin: 15px;
   transition: all 0.5s ease;
   background-color: #ffb727; 
+  overflow: hidden;
 }
 .cardTitle{
   opacity: 1;
