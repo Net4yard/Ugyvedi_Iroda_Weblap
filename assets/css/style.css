@@ -640,6 +640,10 @@ section {
   
 }
 
+.resume-item p{
+  text-align: justify;
+}
+
 .introduction .introduction-title {
   font-size: 26px;
   font-weight: 700;
