@@ -1,0 +1,153 @@
+@import "variables.scss";
+
+header {
+    height: 80px;
+    width: 100%;
+    background: transparent;
+    position: fixed;
+    z-index: 1000;
+    transition: .5s;
+
+    .header-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        padding-left: 5px;
+        padding-right: 15px;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+
+            li {
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    color: $white;
+                    transition: .3s;
+
+                    &:hover {
+                        color: $primary-color;
+
+                    }
+                }
+
+                .active {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            display: none;
+        }
+    }
+
+    .header-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        display: none;
+
+
+        i {
+            font-size: 22px;
+            padding: 20px;
+            margin-left: -20px;
+            color: $white;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .mobile-panel {
+            display: block;
+            position: absolute;
+            background: $white;
+            width: 300px;
+            left: 0;
+            top: 55px;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            height: 0;
+            overflow: hidden;
+            transition: .5s;
+
+            ul {
+                list-style-type: none;
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+                li {
+                    border-bottom: 1px solid #d8d8d8;
+
+                    a {
+                        padding: 15px 20px;
+                        width: 100%;
+                        display: block;
+                        text-transform: uppercase;
+                        color: $black;
+                        transition: .3s;
+
+                        &:hover {
+                            background-color: $primary-color;
+                            color: $white;
+                        }
+                    }
+
+                    .active {
+                        background-color: $primary-color;
+                        color: $white;
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 480px) {
+                width: calc(100% - 40px);
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            display: flex;
+        }
+    }
+
+    .dropdown {
+        height: 281px !important;
+    }
+
+    @media only screen and (max-width: 700px) {
+        height: 60px;
+    }
+}
+
+.sticky {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 0px #111;  
+    transition: .5s;
+}

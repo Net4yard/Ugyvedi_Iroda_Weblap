@@ -1,0 +1,47 @@
+.specialization {
+    padding: 60px 0;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            background-color: $primary-color;
+            border: 1px solid $primary-color;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+
+            .flex {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                i {
+                    text-align: right;
+                    min-width: 25px;
+                }
+            }
+
+            h6 {
+                font-size: 16px;
+            }
+
+            .description {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+            }
+
+            .show {
+                max-height: 100px;
+                padding: 10px 0;
+            }
+        }
+    }
+}

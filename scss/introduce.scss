@@ -1,0 +1,25 @@
+.introduce {
+    background-color: $primary-color;
+    padding: 60px 0;
+
+    h4 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    p {
+        margin-bottom: 16px;
+        text-align: justify;
+    }
+
+    img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    .vertical-image{
+        max-height: 450px;
+    }
+}

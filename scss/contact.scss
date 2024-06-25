@@ -1,0 +1,124 @@
+.contact {
+    padding: 60px 0;
+
+    p {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .cards {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+
+        .card {
+            padding: 20px;
+            color: #444444;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+
+            i {
+                font-size: 20px;
+                color: #ffb727;
+
+            }
+
+            h5 {
+                font-size: 20px;
+                color: $contact-color;
+                font-weight: 700;
+                margin: 16px 0;
+
+                @media only screen and (max-width: 726px) {
+                    margin: 8px 0;
+                }
+            }
+
+            span {
+                line-height: 24px;
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+        }
+
+        @media only screen and (max-width: 726px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    form {
+        background-color: $white;
+        box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+        padding: 30px;
+        padding-bottom: 54px;
+
+        .flex {
+            display: flex;
+            gap: 24px;
+
+            input {
+                width: 100%;
+            }
+
+            @media only screen and (max-width: 726px) {
+                display: block;
+            }
+        }
+
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+        }
+
+        button {
+            background: $primary-color;
+            border: 0;
+            padding: 10px 24px;
+            color: #fff;
+            transition: 0.4s;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            float: right;
+
+            &:hover{
+                background: #ffb727;
+            }
+        }
+
+        @media only screen and (max-width: 1160px) {
+            padding-bottom: 77px;
+        }
+
+        @media only screen and (max-width: 925px) {
+            padding-bottom: 100px;
+        }
+
+        @media only screen and (max-width: 726px) {
+            padding: 15px 15px 54px 15px;
+        }
+    }
+
+    .form{
+        @media only screen and (max-width: 726px) {
+            display: block;
+        }
+
+        .mobile{
+            @media only screen and (max-width: 726px) {
+                width: auto;
+            }
+
+            @media only screen and (max-width: 726px) {
+                width: calc(100% - 20px);
+            }
+        }
+    }
+
+    iframe{
+        width: 100%;
+        margin-top: 20px;
+    }
+}

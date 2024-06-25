@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "build-css": "node-sass --output-style compressed scss/site.scss css/site.min.css",
+        "watch-css": "node-sass --watch --output-style compressed scss/site.scss css/site.min.css"
+      },
+      "dependencies": {
+        "node-sass": "^9.0.0"
+      }
+    }
