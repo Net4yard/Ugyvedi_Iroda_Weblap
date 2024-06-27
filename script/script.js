@@ -152,4 +152,31 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    const cardsContainer = document.querySelector('.cards');
+    const scrollSpeed = 0.6;
+    
+    let scrollPosition = 0;
+    let scrollDirection = 1;
+    
+    const scrollCards = () => {
+        scrollPosition += scrollSpeed;
+        cardsContainer.scrollLeft = scrollPosition;
+    
+        if (scrollPosition >= cardsContainer.scrollWidth - cardsContainer.offsetWidth) {
+            scrollDirection = -1;
+        } else if (scrollPosition <= 0) {
+            scrollDirection = 1;
+        }
+    };
+    
+    let autoscrollInterval = setInterval(scrollCards, 10);
+    
+    cardsContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoscrollInterval);
+    });
+    
+    cardsContainer.addEventListener('mouseleave', () => {
+        autoscrollInterval = setInterval(scrollCards, 10);
+    });
 });

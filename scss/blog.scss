@@ -1,4 +1,4 @@
-.introduce {
+.blog {
     background-color: $primary-color;
     padding: 60px 0;
 
@@ -12,6 +12,20 @@
         text-align: justify;
     }
 
+    button {
+        background: $white;
+        border: 0;
+        padding: 10px 24px;
+        color: #ffb727;
+        transition: 0.4s;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        margin: 0 auto;
+        display: flex;
+        margin-top: 24px;        
+    }
+
     img {
         width: 100%;
         max-height: 300px;
@@ -19,8 +33,53 @@
         margin-bottom: 15px;
         border-radius: 5px;
     }
+    
+    .cards {
+        display: flex;
+        overflow-x: hidden;
+        gap: 50px;
+        padding: 20px;
 
-    .vertical-image{
-        max-height: 450px;
-    }
+        .card {
+            padding: 40px;
+            color: #444444;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+            background-color: $white;
+            border-radius: 20px;
+            max-width: 450px;
+            min-width: 450px;
+            transition: all 0.3s;  
+
+            i {
+                font-size: 20px;
+                color: #ffb727;
+
+            }
+
+            h5 {
+                font-size: 20px;
+                color: $primary-color;
+                font-weight: 700;
+                margin: 16px 0;                
+
+                @media only screen and (max-width: 726px) {
+                    margin: 8px 0;
+                }
+            }
+
+            span {
+                line-height: 24px;
+                font-size: 14px;
+                margin-bottom: 0;
+            }            
+        }
+
+        @media only screen and (max-width: 726px) {
+            margin-bottom: 20px;
+        }
+        .card:hover{
+            max-width: 550px;
+        }
+    }    
 }
