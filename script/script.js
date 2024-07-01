@@ -152,28 +152,32 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
-// Select all elements with the class .blog
-const blogs = document.querySelectorAll('.blog');
 
-// Iterate over each blog card
-blogs.forEach(function(blog) {
-    let clickedBlog = false; // Track the click state for each blog
+    let currentlyExpandedBlog = null; // Track the currently expanded blog globally
 
-    // Add click event listener to each blog card
-    blog.addEventListener('click', function () {
-        if(!clickedBlog){
-            // If the blog hasn't been clicked, expand it
-            blog.style.width = '50em';
-            blog.style.height = '35em';
-            blog.style.backgroundSize = '52em 37em';
-            clickedBlog = true; // Update the clicked state
-        } else {
-            // If the blog has been clicked, shrink it back to original size
-            blog.style.width = '22em';
-            blog.style.height = '30em';
-            blog.style.backgroundSize = '22em 30em'; // Corrected property access
-            clickedBlog = false; // Update the clicked state
-        }    
-    });
+    document.querySelectorAll('.blog').forEach(function(blog) {
+        blog.addEventListener('click', function() {
+            // If there's a currently expanded blog and it's not the one just clicked, reset it
+            if (currentlyExpandedBlog && currentlyExpandedBlog !== blog) {
+                currentlyExpandedBlog.style.width = '22em';
+                currentlyExpandedBlog.style.height = '30em';
+                currentlyExpandedBlog.style.backgroundSize = '22em 30em';
+                // No need to set clickedBlog to false, as we're tracking the expanded blog globally
+            }
+    
+            // If the clicked blog is already expanded, shrink it
+            if (currentlyExpandedBlog === blog) {
+                blog.style.width = '22em';
+                blog.style.height = '30em';
+                blog.style.backgroundSize = '22em 30em';
+                currentlyExpandedBlog = null; // Reset the tracker as no blog is expanded
+            } else {
+                // Expand the clicked blog
+                blog.style.width = '50em';
+                blog.style.height = '35em';
+                blog.style.backgroundSize = '52em 37em';
+                currentlyExpandedBlog = blog; // Update the tracker to the newly expanded blog
+            }
+        });
     });
 });
