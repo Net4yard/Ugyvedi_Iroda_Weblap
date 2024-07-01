@@ -152,31 +152,28 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+// Select all elements with the class .blog
+const blogs = document.querySelectorAll('.blog');
 
-    const cardsContainer = document.querySelector('.cards');
-    const scrollSpeed = 0.6;
-    
-    let scrollPosition = 0;
-    let scrollDirection = 1;
-    
-    const scrollCards = () => {
-        scrollPosition += scrollSpeed;
-        cardsContainer.scrollLeft = scrollPosition;
-    
-        if (scrollPosition >= cardsContainer.scrollWidth - cardsContainer.offsetWidth) {
-            scrollDirection = -1;
-        } else if (scrollPosition <= 0) {
-            scrollDirection = 1;
-        }
-    };
-    
-    let autoscrollInterval = setInterval(scrollCards, 10);
-    
-    cardsContainer.addEventListener('mouseenter', () => {
-        clearInterval(autoscrollInterval);
+// Iterate over each blog card
+blogs.forEach(function(blog) {
+    let clickedBlog = false; // Track the click state for each blog
+
+    // Add click event listener to each blog card
+    blog.addEventListener('click', function () {
+        if(!clickedBlog){
+            // If the blog hasn't been clicked, expand it
+            blog.style.width = '50em';
+            blog.style.height = '35em';
+            blog.style.backgroundSize = '52em 37em';
+            clickedBlog = true; // Update the clicked state
+        } else {
+            // If the blog has been clicked, shrink it back to original size
+            blog.style.width = '22em';
+            blog.style.height = '30em';
+            blog.style.backgroundSize = '22em 30em'; // Corrected property access
+            clickedBlog = false; // Update the clicked state
+        }    
     });
-    
-    cardsContainer.addEventListener('mouseleave', () => {
-        autoscrollInterval = setInterval(scrollCards, 10);
     });
 });
