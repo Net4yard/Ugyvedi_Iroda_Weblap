@@ -131,3 +131,19 @@ space{
   width: 0.6em;
   height: 1em;
 }
+
+.blog-container {
+  height: 105vh;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.section-container {
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.iframe-blog{
+  width: 100vw;
+  height: 100%;
+}
