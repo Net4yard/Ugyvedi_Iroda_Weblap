@@ -1,3 +1,16 @@
+// Service Worker regisztrálása a teljesítmény javításához
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+                console.log('SW registration failed: ', registrationError);
+            });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('header');
     const desktopLinks = document.querySelectorAll('header .container .header-flex ul li a');

@@ -32,19 +32,61 @@
       }
     </script>
     <title>Dr. Bordás Mária Ügyvéd - Büntetőjog, Alkotmányjog | Szentendre</title>
-    <link rel="stylesheet" href="css/site.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="icon" type="image/png" href="/images/logo2.png">
+    
+    <!-- DNS prefetch és preconnect a kritikus erőforrásokhoz -->
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
     <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Kritikus CSS inline -->
+    <style>
+      body{margin:0;padding:0;font-family:'Roboto',sans-serif;line-height:1.6}
+      .container{max-width:1200px;margin:0 auto;padding:0 20px}
+      header{position:fixed;top:0;width:100%;background:#fff;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+      .header-flex{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+      .header-flex ul{display:flex;list-style:none;margin:0;padding:0}
+      .header-flex li{margin-right:2rem}
+      .header-flex a{text-decoration:none;color:#333;font-weight:500}
+      .hero{height:100vh;background:url('images/hero-bg.webp') center center/cover;position:relative;display:flex;align-items:center;justify-content:center}
+      .hero .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5)}
+      .hero .name{position:relative;z-index:2;text-align:center;color:white}
+      .hero h1{font-size:3rem;margin:0;margin-bottom:1rem}
+      .hero span{font-size:1.2rem;letter-spacing:2px}
+      img{max-width:100%;height:auto}
+    </style>
+    
+    <!-- Kritikus CSS betöltése -->
+    <link rel="stylesheet" href="css/site.min.css" />
+    
+    <!-- Font betöltés optimalizálás -->
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"></noscript>
+    
+    <!-- Font Awesome aszinkron betöltése -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </noscript>
+    
+    <link rel="icon" type="image/png" href="/images/logo2.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2c3e50">
   </head>
 
   <body>
@@ -59,13 +101,27 @@
             <li><a href="#contact">Kapcsolat</a></li>
           </ul>
           <a href="en.html" class="language-selector">
-            <img src="images/uk-circle-01.webp" alt="english" />
+            <img 
+              src="images/uk-circle-01.webp" 
+              alt="Switch to English language"
+              width="20"
+              height="20"
+              loading="lazy"
+              decoding="async"
+            />
           </a>
         </div>
         <div class="header-mobile">
           <i class="fa-solid fa-bars"></i>
           <a href="en.html" class="language-selector">
-            <img src="images/uk-circle-01.webp" alt="english" />
+            <img 
+              src="images/uk-circle-01.webp" 
+              alt="Switch to English language"
+              width="20"
+              height="20"
+              loading="lazy"
+              decoding="async"
+            />
           </a>
           <div class="mobile-panel">
             <ul>
@@ -95,7 +151,14 @@
             <h2>Rólam</h2>
             <div class="row align-center">
               <div class="col-25">
-                <img src="images/avatar_2.webp" alt="" />
+                <img 
+                  src="images/avatar_2.webp" 
+                  alt="Prof. Dr. Bordás Mária ügyvéd portréja"
+                  width="434"
+                  height="449"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="col-75">
                 <p>
@@ -134,7 +197,14 @@
         <div class="row">
           <div class="col-50">
             <h4>Tanulmányok</h4>
-            <img src="images/office.webp" alt="" />
+            <img 
+              src="images/office.webp" 
+              alt="Dr. Bordás Mária irodája"
+              width="372"
+              height="496"
+              loading="lazy"
+              decoding="async"
+            />
             <p>
               Az Eötvös Lóránd Tudományegyetem Állam- és Jogtudományi Karán
               szereztem jogi doktori diplomát 1984-ben, majd ugyanott PhD
@@ -207,7 +277,15 @@
               deregulációs programban, valamint az Állami Számvevőszék állami
               korrupcióval kapcsolatos kutatásaiban kutatóként vettem részt.
             </p>
-            <img src="images/livingroom.webp" class="vertical-image" alt="" />
+            <img 
+              src="images/livingroom.webp" 
+              class="vertical-image" 
+              alt="Dr. Bordás Mária tárgyaló szobája"
+              width="372"
+              height="496"
+              loading="lazy"
+              decoding="async"
+            />
             <h4>Tagságok</h4>
             <p>
               2006-ban a Pest Megyei Választási Bizottság választott tagja
@@ -512,8 +590,13 @@
             <img
               src="images/Utca_kep.webp"
               class="streetphoto"
-              alt="Utca felőli kép"
-            ><div class="streetphoto-text">Utca felőli kép</div></img>
+              alt="Az ügyvédi iroda épülete utca felőli kép"
+              width="400"
+              height="300"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="streetphoto-text">Utca felőli kép</div>
           </div>
         </div>
       </div>
@@ -543,6 +626,8 @@
     <a href="#" class="scrollup" id="scroll-up" aria-label="Vissza a lap tetejére">
       <i class="fa-solid fa-arrow-up"></i>
     </a>
-    <script src="script/script.js"></script>
+    
+    <!-- JavaScript aszinkron betöltése -->
+    <script src="script/script.js" async></script>
   </body>
 </html>
